@@ -1,0 +1,62 @@
+.blackNav {
+    background-color: black;
+    height: 100px;
+    padding-top: 1.5rem;
+}
+
+.h1Logo {
+    margin: 0;
+}
+
+.h1Logo a {
+    text-decoration: none;
+    color: white;
+    background-color: black;
+    border-radius: 5px;
+    padding: 0 5px;
+    animation: colorChange 3s infinite;
+}
+
+@keyframes colorChange {
+    0%, 100% {
+        color: white;
+        background-color: black;
+    }
+    50% {
+        color: black;
+        background-color: white;
+    }
+}
+
+ul{
+    color: white;
+    list-style: none;
+    margin-bottom: 0 !important;
+    padding-left: 0 !important;
+    margin-right: 2rem;
+}
+
+li{
+    margin: 0 0.5rem;
+}
+
+li a{
+    color: white;
+    text-decoration: none;
+    position: relative;
+}
+
+li a::before{
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background-color: white;
+    transition: width 0.5s ease;
+}
+
+li a:hover::before {
+    width: 100%;
+}

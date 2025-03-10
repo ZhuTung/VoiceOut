@@ -1,0 +1,12 @@
+.input{
+    border-radius: 5px;
+    border-style: none;
+    width: 100%;
+    transition: 0.5s ease;
+}
+
+.input:focus{
+    outline: none;
+    border: none;
+    background-color: beige;
+}

@@ -1,0 +1,6 @@
+.formBackground {
+    background-color: darkgrey;
+    padding: 1.0rem 1.5rem;
+    margin: 2rem 0;
+    box-shadow: 0.5px 0.5px 5px black;
+}

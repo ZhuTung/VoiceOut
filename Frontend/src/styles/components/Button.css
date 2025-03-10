@@ -1,0 +1,29 @@
+.black-btn{
+    color: white;
+    background-color: black;
+    border-radius: 5px;
+    border: 2px solid transparent;
+    padding: 0.2rem 1rem;
+    transition: 0.5s ease;
+}
+
+.black-btn:hover{
+    color: black;
+    background-color: white;
+    border-color: black;
+}
+
+.white-btn{
+    color: black;
+    background-color: white;
+    border-radius: 5px;
+    border: 2px solid transparent;
+    padding: 0.2rem 1rem;
+    transition: 0.5s ease;
+}
+
+.white-btn:hover{
+    color: white;
+    background-color: black;
+    border-color: white;
+}
