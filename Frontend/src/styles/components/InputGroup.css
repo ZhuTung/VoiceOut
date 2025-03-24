@@ -10,3 +10,10 @@
     border: none;
     background-color: beige;
 }
+
+.error {
+    color: darkred;
+    text-align: left;
+    font-size: 0.85rem;
+    margin: 0;
+}

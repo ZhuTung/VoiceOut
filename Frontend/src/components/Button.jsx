@@ -2,7 +2,7 @@ import React from "react";
 import "../styles/components/Button.css";
 import { useNavigate } from "react-router-dom";
 
-const Button = ({ onClick, children, black, white, to }) => {
+const Button = ({ onClick, children, black, white, to, disabled, className }) => {
     const navigate = useNavigate();
 
     const handleClick = () => {
@@ -18,7 +18,7 @@ const Button = ({ onClick, children, black, white, to }) => {
     <div>
       {black && (
         <div>
-          <button className="black-btn" onClick={handleClick}>
+          <button className={`black-btn ${className}`} onClick={handleClick} disabled={disabled}>
             {children}
           </button>
         </div>
@@ -26,7 +26,7 @@ const Button = ({ onClick, children, black, white, to }) => {
 
       {white && (
         <div>
-          <button className="white-btn" onClick={handleClick}>
+          <button className="white-btn" onClick={handleClick} disabled={disabled}>
             {children}
           </button>
         </div>

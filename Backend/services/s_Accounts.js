@@ -1,27 +1,54 @@
 const Account = require('../models/account');
 
 const loginService = async (data) => {
-    return data;
+    let result = {
+        success: true,
+        category: "",
+        message: ""
+    }
+
+    const accountExists = await Account.findOne( { email: data.email });
+
+    if(!accountExists) {
+        result.success = false;
+        result.message = "Account did not exists";
+        return result;
+    }
+
+    if(data.password === accountExists.password) {
+        result.success = true;
+        result.message = "Login Success"
+        result.category = accountExists.category
+
+    }
+    else{
+        result.success = false;
+        result.message = "Incorrect Password";
+    }
+
+    return result;
 }
 
 const registerService = async (data) => {
-    const usernameExists = await Account.findOne( {email: data.email });
+    let result = {
+        success: true,
+        message: ""
+    }
 
-    if(usernameExists) {
-        return {
-            success: false,
-            message: "Email already exists"
-        };
+    const accountExists = await Account.findOne( {email: data.email });
+
+    if(accountExists) {
+        result.success = false,
+        result.message = "Email already exists"
     }
     else {
         const account = new Account(data);
-        const savedAccount = await account.save();
-        
-        return {
-            success: true,
-            message: `Account created successfully for ${savedAccount.email}`
-        };
+        await account.save();
+
+        result.success = true,
+        result.message = "Account created! You will be redirected to login"
     }
+    return result
 }
 
 module.exports = {

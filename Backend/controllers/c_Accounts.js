@@ -9,7 +9,18 @@ const useLogin = async (req, res) => {
     try {
         const data = req.body;
         const result = await loginService(data);
-        res.status(200).send(result)
+
+        if(!result.success) {
+            res.status(400).send({
+                message: result.message
+            });
+        }
+        else {
+            res.status(200).send({
+                message: result.message,
+                category: result.category
+            });
+        }
     }
     catch (err) {
         res.status(500).send("Error in request:", err);

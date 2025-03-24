@@ -6,7 +6,7 @@ import Footer from "../../components/Footer";
 const Homepage = () => {
   return (
     <div>
-      <Navbar></Navbar>
+      <Navbar type="home"></Navbar>
       <main>
       <div className="text-center mt-5 pb-3">
         <h1>
