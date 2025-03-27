@@ -19,7 +19,8 @@ const loginService = async (data) => {
         result.success = true;
         result.message = "Login Success"
         result.category = accountExists.category
-
+        result.email = accountExists.email
+        result.name = accountExists.name
     }
     else{
         result.success = false;
@@ -53,5 +54,5 @@ const registerService = async (data) => {
 
 module.exports = {
     loginService,
-    registerService
+    registerService,
 }

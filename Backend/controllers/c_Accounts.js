@@ -2,7 +2,7 @@ const s_Accounts = require('../services/s_Accounts')
 
 const {
     loginService,
-    registerService
+    registerService,
 } = s_Accounts
 
 const useLogin = async (req, res) => {
@@ -18,7 +18,9 @@ const useLogin = async (req, res) => {
         else {
             res.status(200).send({
                 message: result.message,
-                category: result.category
+                category: result.category,
+                email: result.email,
+                name: result.name
             });
         }
     }
@@ -47,6 +49,7 @@ const useRegister = async (req, res) => {
         res.status(500).send("Error in request:", err);
     }
 }
+
 
 module.exports = {
     useLogin,

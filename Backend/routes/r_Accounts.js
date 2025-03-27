@@ -4,7 +4,7 @@ const route = express.Router()
 
 const {
     useLogin,
-    useRegister
+    useRegister,
 } = c_Accounts
 
 route.post("/login", useLogin)

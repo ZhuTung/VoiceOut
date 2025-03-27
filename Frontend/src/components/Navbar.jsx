@@ -2,8 +2,11 @@ import React from "react";
 import "../styles/components/Navbar.css";
 import Button from "./Button";
 
-const Navbar = ({ type }) => {
-  const userType = "Client";
+const Navbar = ({ type, user }) => {
+  const userType = user;
+
+  const name = localStorage.getItem("userName");
+
   return (
     <div>
       {type == "home" && (
@@ -38,17 +41,56 @@ const Navbar = ({ type }) => {
 
       {type == "client-mentor" && (
         <div className={userType === "Mentor" ? "blueNav" : "redNav"}>
-          <div className="container d-flex justify-content-end">
-            <div className="w-25 pt-md-2">
+          <div className="container d-flex justify-content-between">
+            <div>
+              <h1>
+                <a
+                  href={userType === "Mentor" ? "/mentor-home" : "client-home"}
+                  style={{
+                    color: userType === "Mentor" ? "white" : "black",
+                    textDecoration: "none",
+                  }}
+                >
+                  VoiceOut
+                </a>
+              </h1>
+            </div>
+            <div
+              className={`${userType === "Mentor" ? "w-25" : "w-50"} pt-md-2`}
+            >
               <div className="d-flex flex-row justify-content-around">
+                {userType === "Client" && (
+                  <div className="pt-1 pb-2 m-0">
+                    <a href="/mentor-advice" className="link">
+                      Mentor's Advice
+                    </a>
+                  </div>
+                )}
+
                 <div>
-                  <p className="pt-1 pb-2 m-0 text-center">Hello, Test</p>
+                  <p
+                    className="pt-1 pb-2 m-0 text-center"
+                    style={{ color: userType === "Mentor" ? "white" : "black" }}
+                  >
+                    Hello, {name}
+                  </p>
                 </div>
-                <div>
-                  <Button white to="/">
-                    Log Out
-                  </Button>
-                </div>
+
+                {userType === "Mentor" && (
+                  <div>
+                    <Button white to="/">
+                      Log Out
+                    </Button>
+                  </div>
+                )}
+
+                {userType === "Client" && (
+                  <div>
+                    <Button black to="/">
+                      Log Out
+                    </Button>
+                  </div>
+                )}
               </div>
             </div>
           </div>

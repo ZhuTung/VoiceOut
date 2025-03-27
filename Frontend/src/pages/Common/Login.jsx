@@ -52,6 +52,7 @@ const Login = () => {
         };
 
         const response = await loginAcc(accountData);
+        
         if(response.category === 'Mentor'){
           route = '/mentor-home';
           message = "You have successfully login as a Mentor";
@@ -60,6 +61,9 @@ const Login = () => {
           route = '/client-home';
           message = "You have successfully login as a User";
         }
+
+        localStorage.setItem("userName", response.name);
+        localStorage.setItem("userEmail", response.email);
 
         Toast.success(message);
         setTimeout(() => {

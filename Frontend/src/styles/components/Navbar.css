@@ -72,3 +72,23 @@ li a::before{
 li a:hover::before {
     width: 100%;
 }
+
+.link {
+    position: relative;
+    text-decoration: none;
+    color: black;
+}
+.link::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background-color: black;
+    transition: width 0.5s ease;
+}
+
+.link:hover::before {
+    width: 100%;
+}
