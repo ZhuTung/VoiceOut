@@ -10,9 +10,10 @@ import useAddAdvices from "../../web-utils/hooks/useAddAdvices";
 const GiveHelp = () => {
   const location = useLocation();
   const navigate = useNavigate();
-  const author = location.state?.row;
+  const client = location.state?.row;
 
-  const clientEmail = author.email
+  const clientTitle = client.title
+  const clientEmail = client.email
   const mentorName = localStorage.getItem("userName")
 
   const [advice, setAdvice] = useState("");
@@ -28,6 +29,7 @@ const GiveHelp = () => {
           const body = {
             advice,
             mentorName,
+            clientTitle,
             clientEmail
           };
   
@@ -55,8 +57,8 @@ const GiveHelp = () => {
 
       <div className="container mt-3">
         <div>
-          <p>Author: {author.name}</p>
-          <p>{author.thought}</p>
+          <p>From: {client.name}</p>
+          <p>{client.thought}</p>
         </div>
 
         <div>

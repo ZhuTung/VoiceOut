@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const AdvicesSchema = new mongoose.Schema({
     advice: { type: String, required: true },
     mentorName: { type: String, required: true },
+    clientTitle: {type: String, required: true },
     clientEmail: { type: String, required: true }
 });
 

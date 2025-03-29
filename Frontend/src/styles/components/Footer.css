@@ -1,9 +1,9 @@
 .footerBackground{
     background-color: black;
+    position: relative;
     color: white;
-    position: fixed;
-    bottom: 0;
     width: 100%;
+    bottom: -71px;
 }
 
 .voiceOutFooter{

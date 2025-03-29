@@ -24,7 +24,7 @@ const Navbar = ({ type, user }) => {
                   <a href="#seek-help">Seek Help</a>
                 </li>
                 <li>
-                  <a href="#contact-us">Contact Us</a>
+                  <a href="#intentions">The Intentions</a>
                 </li>
                 <li>
                   <a href="#about-us">About Us</a>

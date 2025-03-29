@@ -22,6 +22,7 @@ const ClientMainpage = () => {
   });
 
   const handleSubmit = async () => {
+    console.log(thought, title)
     if (!(thought && title)) {
       Toast.error("Please do not fill in the blank.");
     } else {
@@ -61,6 +62,8 @@ const ClientMainpage = () => {
             name="title"
             id="title"
             className="txtTitle"
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
             placeholder="Enter your title"
           ></input>
         </div>

@@ -1,8 +1,8 @@
 import React from 'react'
 import '../styles/components/Card.css'
-const Section = ({ children, border, className }) => {
+const Section = ({ id, children, border, className }) => {
   return (
-    <div className={`container mt-4 mb-3 ${border === true? 'borderSection':''}`} >
+    <div id={id} className={`container mt-4 mb-3 pt-3 pb-3 ${border === true? 'borderSection':''}`} >
         <div className={className}>
             {children}
         </div>
