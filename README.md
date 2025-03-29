@@ -3,7 +3,7 @@ VoiceOut is a simple confession system that allows people to vent and release th
 
 ## Tech Stack
 Frontend: React and Bootstrap
-Backend: NodeJs, ExpressJs, MongoDB and Docker
+  Backend: NodeJs, ExpressJs, MongoDB and Docker
 
 ## How to setup the system
 ### For Frontend:
